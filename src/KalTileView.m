@@ -54,15 +54,26 @@ extern const CGSize kTileSize;
     shadowColor = [UIColor blackColor];
     markerImage = [UIImage imageNamed:@"Kal.bundle/kal_marker_selected.png"];
   } else if (self.belongsToAdjacentMonth) {
-    textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_tile_dim_text_fill.png"]];
-    shadowColor = nil;
+      // M. Vickery: 14/03/2011:
+      textColor = [UIColor colorWithRed:85.0/255.0 green:85.0/255.0 blue:85.0/255.0 alpha:1.0];
+      shadowColor = [UIColor blackColor];
+    //textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_tile_dim_text_fill.png"]];
+    //shadowColor = nil;
     markerImage = [UIImage imageNamed:@"Kal.bundle/kal_marker_dim.png"];
   } else {
-    textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_tile_text_fill.png"]];
-    shadowColor = [UIColor whiteColor];
+      // M. Vickery: 14/03/2011:
+      textColor = [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0];
+      shadowColor = [UIColor blackColor];
+      if (flags.marked)
+      {
+          textColor = [UIColor colorWithRed:115.0/255.0 green:218.0/255.0 blue:255.0/255.0 alpha:1.0];
+      }
+    //textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_tile_text_fill.png"]];
+    //shadowColor = [UIColor whiteColor];
     markerImage = [UIImage imageNamed:@"Kal.bundle/kal_marker.png"];
   }
   
+    
   if (flags.marked)
     [markerImage drawInRect:CGRectMake(21.f, 5.f, 4.f, 5.f)];
   

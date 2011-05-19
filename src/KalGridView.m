@@ -17,7 +17,8 @@
 #define SLIDE_UP 1
 #define SLIDE_DOWN 2
 
-const CGSize kTileSize = { 46.f, 44.f };
+// M. Vickery: Adjusted cell height below from 44.f to 40.f:
+const CGSize kTileSize = { 46.f, 40.f };
 
 static NSString *kSlideAnimationId = @"KalSwitchMonths";
 
@@ -63,7 +64,11 @@ static NSString *kSlideAnimationId = @"KalSwitchMonths";
 - (void)drawRect:(CGRect)rect
 {
   [[UIImage imageNamed:@"Kal.bundle/kal_grid_background.png"] drawInRect:rect];
-  [[UIColor colorWithRed:0.63f green:0.65f blue:0.68f alpha:1.f] setFill];
+
+  // M. Vickery: 21/04/2011: 
+  // Changed the colour below to get rid of the flashing white line that appeared below the calendar when it animated from one month to the next
+  [[UIColor clearColor] setFill];
+    
   CGRect line;
   line.origin = CGPointMake(0.f, self.height - 1.f);
   line.size = CGSizeMake(self.width, 1.f);

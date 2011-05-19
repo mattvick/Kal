@@ -104,8 +104,11 @@ static const CGFloat kMonthLabelHeight = 17.f;
   headerTitleLabel.backgroundColor = [UIColor clearColor];
   headerTitleLabel.font = [UIFont boldSystemFontOfSize:22.f];
   headerTitleLabel.textAlignment = UITextAlignmentCenter;
-  headerTitleLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_header_text_fill.png"]];
-  headerTitleLabel.shadowColor = [UIColor whiteColor];
+    // M. Vickery: 14/03/2011:
+    headerTitleLabel.textColor = [UIColor whiteColor];
+    headerTitleLabel.shadowColor = [UIColor blackColor];
+  //headerTitleLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_header_text_fill.png"]];
+  //headerTitleLabel.shadowColor = [UIColor whiteColor];
   headerTitleLabel.shadowOffset = CGSizeMake(0.f, 1.f);
   [self setHeaderTitleText:[logic selectedMonthNameAndYear]];
   [headerView addSubview:headerTitleLabel];
@@ -133,8 +136,11 @@ static const CGFloat kMonthLabelHeight = 17.f;
     weekdayLabel.backgroundColor = [UIColor clearColor];
     weekdayLabel.font = [UIFont boldSystemFontOfSize:10.f];
     weekdayLabel.textAlignment = UITextAlignmentCenter;
-    weekdayLabel.textColor = [UIColor colorWithRed:0.3f green:0.3f blue:0.3f alpha:1.f];
-    weekdayLabel.shadowColor = [UIColor whiteColor];
+      // M. Vickery: 14/03/2011:
+      weekdayLabel.textColor = [UIColor whiteColor];
+      weekdayLabel.shadowColor = [UIColor blackColor];
+    //weekdayLabel.textColor = [UIColor colorWithRed:0.3f green:0.3f blue:0.3f alpha:1.f];
+    //weekdayLabel.shadowColor = [UIColor whiteColor];
     weekdayLabel.shadowOffset = CGSizeMake(0.f, 1.f);
     weekdayLabel.text = [weekdayNames objectAtIndex:i];
     [headerView addSubview:weekdayLabel];
